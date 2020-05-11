@@ -20,11 +20,6 @@ public class MauzillaPlayer : Player
         base.Start();
         
         currentHealth = maxHealth;
-        healthbar = GameObject.Find("MauzillaHealthbar").transform.GetChild(1).gameObject.GetComponent<Image>();
-        healthbar.fillAmount = 1f;
-
-        laserbar = GameObject.Find("laserpower").GetComponent<Image>();
-        laserbar.fillAmount = 1f;
 
         damageEffect = transform.GetChild(1).gameObject;
         damageEffect.SetActive(false);
@@ -41,22 +36,7 @@ public class MauzillaPlayer : Player
     {
         base.Update();
         
-        updateLaserbar();
         controlAbility();
-    }
-
-    void updateLaserbar()
-    {
-        laserbar = GameObject.Find("laserpower").GetComponent<Image>();
-
-        laserbar.fillAmount = (cooldownTime - currentAbilityCooldown) / cooldownTime;
-        if(laserbar.fillAmount == 1)
-        {
-            GameObject.Find("Laserbar").transform.GetChild(1).gameObject.SetActive(true);
-        } else
-        {
-            GameObject.Find("Laserbar").transform.GetChild(1).gameObject.SetActive(false);
-        }
     }
 
     public void controlAbility()
@@ -126,11 +106,6 @@ public class MauzillaPlayer : Player
     {
         if(inputControl.isActionKeyPressedInFrame())
         {
-            // Mauzilla is near a normal/repaired Building and pressing Action Key
-            if (collidingBuilding && GetComponent<InputControl>().isActionKeyPressedInFrame() && collidingBuilding.state != 1 && collidingBuilding.health > 0) {
-                collidingBuilding.adjustHealth(-1);
-                gameObject.GetComponent<AudioSource>().Play(0);
-            }
         }
     }
 
@@ -155,16 +130,16 @@ public class MauzillaPlayer : Player
         {
             RaycastHit2D hit = hits[i];
 
-            if (hit.collider.gameObject.tag == "building")
-            {
-                Building building = hit.collider.gameObject.GetComponent<Building>();
+            // if (hit.collider.gameObject.tag == "building")
+            // {
+            //     Building building = hit.collider.gameObject.GetComponent<Building>();
 
-                if (building.state != 1 && building.health >= 1)
-                {
-                    //building is not destroyed
-                    building.adjustHealth(-1);
-                }
-            }
+            //     if (building.state != 1 && building.health >= 1)
+            //     {
+            //         //building is not destroyed
+            //         building.adjustHealth(-1);
+            //     }
+            // }
         }
 
         laserLine.SetPosition(0, new Vector3(rb2d.transform.position.x, rb2d.transform.position.y, 100));
@@ -211,14 +186,8 @@ public class MauzillaPlayer : Player
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.CompareTag("building")) {
-            collidingBuilding = col.gameObject.GetComponent<Building>();
-        }
     }
 
     void OnCollisionExit2D(Collision2D col) {
-        if (col.gameObject.CompareTag("building")) {
-            collidingBuilding = null;
-        }
     }
 }

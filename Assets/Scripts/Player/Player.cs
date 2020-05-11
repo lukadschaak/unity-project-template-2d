@@ -29,11 +29,6 @@ public class Player : MonoBehaviour
     public float currentAbilityCooldown = -0.1f;
     public float currentAbilityActiveDuration = -1;
 
-    // colliding / triggering
-    public Building collidingBuilding; // The Artisan Mauzilla is near
-
-    // 
-
     public virtual void Start() {
         this.speed = GameManager.instance.playerSpeed;
 
@@ -52,13 +47,11 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.CompareTag("building")) {
-            collidingBuilding = col.gameObject.GetComponent<Building>();
         }
     }
 
     void OnTriggerExit2D(Collider2D col) {
         if (col.gameObject.CompareTag("building")) {
-            collidingBuilding = null;
         }
     }
 
@@ -115,20 +108,5 @@ public class Player : MonoBehaviour
 
     public virtual void updateAction()
     {
-
-        if(inputControl.isActionKeyPressedInFrame())
-        {
-            // Artisan is near a destroyed Building and pressing Action Key
-            if (collidingBuilding && collidingBuilding.state == 1) {
-
-                // Check if all required Artisans are near the Building
-                if (collidingBuilding.RepairConditionsMet(character)) {
-                    collidingBuilding.adjustHealth(1);
-                    gameObject.GetComponent<AudioSource>().Play(0);
-                } else {
-                    Debug.Log("You're missing the right skills to repair this building!");
-                }
-            }
-        }
     }
 }

@@ -44,18 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bba0ddd90a93a45a2d9889b1f220aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  currentSceneName: 
   inputType: 0
-  mauzilla: {fileID: 721915902624415508, guid: 25dccd6a739e348dc9a7c8f50026ce3c, type: 3}
-  schneider: {fileID: 4630896681391010232, guid: 4e21bf17c2ae54311b0e2ebf6fe6cfb4,
-    type: 3}
-  maurer: {fileID: 7296970448023110755, guid: 0ca6bb1bc8f23407aad8599a62869d16, type: 3}
-  tischler: {fileID: 1416063382216305024, guid: 361c2fb0aac5c4be78f3e356bcb9504e,
-    type: 3}
-  building: {fileID: 2277621232044658855, guid: 9a64a32c8b2fc468ea4ea2e2ecdc45aa,
-    type: 3}
-  buildingsContainer: {fileID: 0}
+  playerSpeed: 0.08
+  currentSceneName: 
+  mauzilla: {fileID: 721915902624415508, guid: ab1740a2ded34d44fb6f5929d3ae1bd6, type: 3}
 --- !u!114 &6272519912618513277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,21 +60,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e638c85b66e566747b53510c1c79003a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyed: {fileID: 11400000, guid: 0328e60948b93defbabf4540ad60ad86, type: 2}
+  destroyed: {fileID: 0}
   fixedGroundFloors:
-  - {fileID: 11400000, guid: fba41321e2dc3dacfbcb0048037c2411, type: 2}
-  - {fileID: 11400000, guid: de579fd052be737389c52763c2e31b29, type: 2}
-  - {fileID: 11400000, guid: c792a5e0db5403bf08740db10712d963, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fixedStoreys:
-  - {fileID: 11400000, guid: 871e4a580854508898ed6f659741299c, type: 2}
-  - {fileID: 11400000, guid: d098cff189346b400b554f7e9fc3bfd3, type: 2}
-  - {fileID: 11400000, guid: d098cff189346b400b554f7e9fc3bfd3, type: 2}
-  - {fileID: 11400000, guid: 4f70ef3445a37aa4881c864fb40120c2, type: 2}
-  - {fileID: 11400000, guid: 2af1cc223e9b0ba5cb49c6fd992061cd, type: 2}
-  - {fileID: 11400000, guid: e91b4b2314d3f6b559a52c15f4b4510b, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fixedRoof:
-  - {fileID: 11400000, guid: 10ffab11024739b37a74656f24491165, type: 2}
-  - {fileID: 11400000, guid: f8e8ad0d50e67dd2b9da89ced49eb775, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   tileMaps:
   - {fileID: 0}
   - {fileID: 0}

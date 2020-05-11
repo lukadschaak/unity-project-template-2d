@@ -57,7 +57,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 65b96acc117e8454cb82479142e4a4e7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: feb77a9f1cdc3964e8ac634e2f57bf20, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -153,7 +153,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c1f80581eb7e0ac47a4a7f0981a26069, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e0126a286ed9d3f4eaa7429abe4f1b15, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
